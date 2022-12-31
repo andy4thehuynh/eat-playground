@@ -9,7 +9,7 @@ const Banner = () => {
           950 BROADWAY, DENVER, CO 80203
         </a>
 
-        <a className="hidden sm:inline sm:text-sm sm:font-normal" href="tel:+3033350368">
+        <a className="hidden text-sm font-normal md:inline" href="tel:+3033350368">
           (303) 335-0368
         </a>
       </div>
