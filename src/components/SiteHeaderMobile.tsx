@@ -1,4 +1,5 @@
 import LocationBanner from '../components/LocationBanner.js';
+import Navbar from '../components/Navbar.js';
 
 const SiteHeaderMobile = () => {
   return (
@@ -18,6 +19,7 @@ const SiteHeaderMobile = () => {
       </div>
 
       <LocationBanner/>
+      <Navbar/>
     </section>
   )
 }
