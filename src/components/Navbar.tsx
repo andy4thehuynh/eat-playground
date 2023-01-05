@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="object-cover my-3">
         <a href="/">
           <img
-            src="../src/images/playground-header-logo.avif"
+            src="/images/playground-header-logo.avif"
             className="block h-[38px]"
             alt="a sandwich sitting on top of a wooden table"
           />

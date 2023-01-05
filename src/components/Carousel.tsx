@@ -43,35 +43,35 @@ const Carousel = () => {
     <div className="carousel-inner flex relative w-full overflow-hidden h-auto max-h-[677px]">
       <div className="carousel-item self-center active float-left w-full">
         <img
-          src="../src/images/ramen.jpeg"
+          src="/images/ramen.jpeg"
           className="block max-w-full h-auto"
           alt="a bowl of food on a plate"
         />
       </div>
       <div className="carousel-item self-center float-left w-full">
         <img
-          src="../src/images/banh-mi.jpg"
+          src="/images/banh-mi.jpg"
           className="block w-full h-full"
           alt="a sandwich sitting on top of a wooden table"
         />
       </div>
       <div className="carousel-item self-center float-left w-full">
         <img
-          src="../src/images/chicken-wings.jpg"
+          src="/images/chicken-wings.jpg"
           className="block w-full h-full"
           alt="chicken wings"
         />
       </div>
       <div className="carousel-item self-center float-left w-full">
         <img
-          src="../src/images/bowl-of-rice.jpg"
+          src="/images/bowl-of-rice.jpg"
           className="block w-full h-full"
           alt="a bowl of food on a plate"
         />
       </div>
       <div className="carousel-item self-center float-left w-full">
         <img
-          src="../src/images/honey-chicken-wings.jpg"
+          src="/images/honey-chicken-wings.jpg"
           className="block w-full h-full"
           alt="a bowl of food on a plate"
         />
