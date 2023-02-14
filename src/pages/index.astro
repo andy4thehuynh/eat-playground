@@ -5,10 +5,72 @@ import Layout from '../components/Layout.astro';
 import SiteHeaderMobile from '../components/SiteHeaderMobile.js';
 import Carousel from '../components/Carousel.js';
 import FoodMenu from '../components/FoodMenu.js';
+import SocialLinks from '../components/SocialLinks.js';
 ---
 
 <Layout title="Playground Asian Food Hall | Asian fusion food hall in Denver, CO">
   <SiteHeaderMobile/>
   <Carousel/>
+
   <FoodMenu/>
+  <section class="revealable bg-yellow-300 flex justify-center items-center px-8 py-32">
+    <h1 class="text-4xl">
+      <small class="text-base">Welcome To</small>
+      <br/>
+      Playground
+    </h1>
+    <h4>Asian Fusion Food Hall</h4>
+    <p>We are a collection of 6 restaurant concepts operating out of one state-of-the-art, smart kitchen. Our brands offer culinary designed menus carefully crafted with quality you can taste. From our kitchen to yours, we hope you taste the love delivered to your door.</p>
+  </section>
+
+  <section class="bg-pink-500">
+    <h1>Our Menus</h1>
+    <p>Asian/Mex concepts to traditional comforts of Chinese takeout favorites. Explore a variety of dishes from sweet Thai chili shrimp to dumplings and Asian fusion tacos.</p>
+    <a href="#">VIEW MENUS</a>
+  </section>
+
+  <section>
+    <img
+      src="/images/bonfire-logo.avif"
+      class="block w-full h-full"
+      alt="a bowl of food on a plate"
+    />
+  </section>
+
+  <section class="bg-orange-400">
+    <h1>HEALTH CONSCIOUS OPTIONS</h1>
+    <p>Our food hall encourages togetherness, light-hearted yet seriously delicious foods with various options for every diet. Gluten-free options to nut allergies.</p>
+    <a href="#">GIFT CARDS COMING SOON!</a>
+  </section>
+
+  <section>
+    <img
+      src="/images/ban-chan.avif"
+      class="block w-full h-full"
+      alt="a bowl of food on a plate"
+    />
+  </section>
+
+  <section class="bg-yellow-400">
+    <h1>OUT CATERING</h1>
+    <p>Let us cater your next event!</p>
+    <a href="#">INQUIRE NOW</a>
+  </section>
+
+  <section>
+    <img
+      src="/images/eggrolls.avif"
+      class="block w-full h-full"
+      alt="a bowl of food on a plate"
+    />
+  </section>
+
+  <footer>
+    <SocialLinks/>
+    <div>
+      <a href="#">CONTACT</a>
+      <a href="#">EVENTS</a>
+      <a href="#">EMAIL SIGNUP</a>
+    </div>
+  </footer>
 </Layout>
