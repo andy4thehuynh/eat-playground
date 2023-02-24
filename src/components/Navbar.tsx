@@ -4,7 +4,7 @@ const Navbar = () => {
   const links = {
     "HOURS & LOCATION": "hours_and_location.html",
     "MENU": "#menu",
-    "ABOUT": "#about",
+    "ABOUT": "about.html",
     "CATERING": "#catering",
   };
 
