@@ -5,7 +5,7 @@ const Navbar = () => {
     "HOURS & LOCATION": "hours_and_location.html",
     "MENU": "#menu",
     "ABOUT": "about.html",
-    "CATERING": "#catering",
+    "CATERING": "catering.html",
   };
 
   return(
