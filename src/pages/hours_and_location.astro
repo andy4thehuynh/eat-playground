@@ -1,0 +1,59 @@
+---
+import "../styles/index.css";
+
+import Layout from '../components/Layout.astro';
+import SiteHeaderMobile from '../components/SiteHeaderMobile.js';
+import Footer from '../components/Footer.js';
+---
+
+<Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
+  <SiteHeaderMobile/>
+  <section>
+    <img
+      src="/images/dim-sum.avif"
+      class="block object-cover bg-cover h-[70vh] w-full"
+      alt="a variety of dim sum on a table"
+    />
+  </section>
+
+  <section>
+    <h1>
+      HOURS & LOCATION
+    </h1>
+    <p>
+      <a href="https://maps.google.com/?q=950+Broadway,+Denver,+CO+80203,+USA&ftid=0x876c7f29c79cc459:0x331c561681c06022" target="_blank">
+        950 Broadway,
+        <br>
+        Denver,
+        <br>
+        CO 80203
+      </a>
+      <br>
+      <a href="tel:(303) 335-0368">(303) 335-0368</a>
+      <br>
+      <a href="mailto:eatplayground@gmail.com">eatplayground@gmail.com</a>
+    </p>
+    <p>Monday - Closed</p>
+    <p>
+      Tuesday - Sunday
+      <br>
+      11:00 am - 9:00 pm
+    </p>
+  </section>
+
+  <section class="map-responsive">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.3694701937084!2d-104.98928348452225!3d39.731350779450764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7f29c79cc459%3A0x331c561681c06022!2s950%20Broadway%2C%20Denver%2C%20CO%2080203!5e0!3m2!1sen!2sus!4v1677266495895!5m2!1sen!2sus"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <section>
+    <Footer/>
+  </section>
+</Layout>

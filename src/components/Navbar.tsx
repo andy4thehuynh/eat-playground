@@ -2,7 +2,7 @@ import NavbarLink from '../components/NavbarLink.js';
 
 const Navbar = () => {
   const links = {
-    "HOURS & LOCATION": "#hours",
+    "HOURS & LOCATION": "hours_and_location.html",
     "MENU": "#menu",
     "ABOUT": "#about",
     "CATERING": "#catering",
