@@ -40,39 +40,39 @@ const Carousel = () => {
         aria-label="Slide 5"
       ></button>
     </div>
-    <div className="carousel-inner flex relative w-full overflow-hidden h-auto max-h-[677px]">
-      <div className="carousel-item self-center active float-left w-full">
+    <div className="carousel-inner flex relative w-full overflow-hidden">
+      <div className="carousel-item self-center active float-left w-full h-[75vh]">
         <img
           src="/images/ramen.jpeg"
-          className="block max-w-full h-auto"
+          className="block w-full h-full object-cover bg-cover"
           alt="a bowl of food on a plate"
         />
       </div>
-      <div className="carousel-item self-center float-left w-full">
+      <div className="carousel-item self-center float-left w-full h-[75vh]">
         <img
           src="/images/banh-mi.jpg"
-          className="block w-full h-full"
+          className="block w-full h-full object-cover bg-cover"
           alt="a sandwich sitting on top of a wooden table"
         />
       </div>
-      <div className="carousel-item self-center float-left w-full">
+      <div className="carousel-item self-center float-left w-full h-[75vh]">
         <img
           src="/images/chicken-wings.jpg"
-          className="block w-full h-full"
+          className="block w-full h-full object-cover bg-cover"
           alt="chicken wings"
         />
       </div>
-      <div className="carousel-item self-center float-left w-full">
+      <div className="carousel-item self-center float-left w-full h-[75vh]">
         <img
           src="/images/bowl-of-rice.jpg"
-          className="block w-full h-full"
+          className="block w-full h-full object-cover bg-cover"
           alt="a bowl of food on a plate"
         />
       </div>
-      <div className="carousel-item self-center float-left w-full">
+      <div className="carousel-item self-center float-left w-full h-[75vh]">
         <img
           src="/images/honey-chicken-wings.jpg"
-          className="block w-full h-full"
+          className="block w-full h-full object-cover bg-cover"
           alt="a bowl of food on a plate"
         />
       </div>
