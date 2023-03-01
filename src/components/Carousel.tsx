@@ -6,6 +6,10 @@ const Carousel = () => {
     className="carousel slide carousel-fade relative"
     data-bs-ride="carousel"
   >
+    <img
+      src="/images/playground-carousel-logo.avif"
+      className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] object-cover bg-cover z-50 max-w-[65%]" />
+
     <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
       <button
         type="button"
@@ -40,6 +44,7 @@ const Carousel = () => {
         aria-label="Slide 5"
       ></button>
     </div>
+
     <div className="carousel-inner flex relative w-full overflow-hidden">
       <div className="carousel-item self-center active float-left w-full h-[75vh]">
         <img
