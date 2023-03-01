@@ -1,5 +1,7 @@
 ---
 import "../styles/index.css";
+import "../styles/navbarlink.css";
+import LocationBanner from '../components/LocationBanner.js';
 
 import Layout from '../components/Layout.astro';
 import SiteHeaderMobile from '../components/SiteHeaderMobile.js';
@@ -9,7 +11,33 @@ import Footer from '../components/Footer.js';
 ---
 
 <Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
-  <SiteHeaderMobile/>
+  <section class="hidden md:block">
+    <LocationBanner/>
+  </section>
+  <section class="top-nav">
+    <div class="object-cover my-3">
+      <a href="/">
+        <img
+          src="/images/playground-header-logo.avif"
+          class="block h-[38px]"
+          alt="a sandwich sitting on top of a wooden table"
+        />
+      </a>
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+    <ul class="menu z-50">
+      <li class="md:link-underline-animation "><a href="hours_and_location.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">HOURS & LOCATION</a></li>
+      <li class="md:link-underline-animation "><a href="#" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">MENU</a></li>
+      <li class="md:link-underline-animation "><a href="about.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">ABOUT</a></li>
+      <li class="md:link-underline-animation "><a href="contact.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">CONTACT</a></li>
+    </ul>
+  </section>
+  <div class="md:hidden">
+    <LocationBanner/>
+  </div>
 
   <Revealable client:visible>
     <section class="relative">
