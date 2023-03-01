@@ -3,7 +3,7 @@ import "../styles/navbarlink.css";
 import "../styles/index.css";
 
 import Layout from '../components/Layout.astro';
-import SiteHeaderMobile from '../components/SiteHeaderMobile.js';
+import LocationBanner from '../components/LocationBanner.js';
 import Revealable from '../components/Revealable.js';
 import Carousel from '../components/Carousel.js';
 import FoodMenu from '../components/FoodMenu.js';
@@ -26,12 +26,14 @@ import Footer from '../components/Footer.js';
       <div class='menu-button'></div>
     </label>
     <ul class="menu z-50">
-      <li class="md:link-underline-animation "><a href="#" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">HOURS AND LOCATION</a></li>
+      <li class="md:link-underline-animation "><a href="hours_and_location.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">HOURS AND LOCATION</a></li>
       <li class="md:link-underline-animation "><a href="#" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">MENU</a></li>
-      <li class="md:link-underline-animation "><a href="#" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">ABOUT</a></li>
-      <li class="md:link-underline-animation "><a href="#" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">CONTACT</a></li>
+      <li class="md:link-underline-animation "><a href="about.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">ABOUT</a></li>
+      <li class="md:link-underline-animation "><a href="contact.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">CONTACT</a></li>
     </ul>
   </section>
+  <LocationBanner/>
+
   <Carousel/>
 
   <Revealable client:visible>
