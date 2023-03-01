@@ -3,42 +3,48 @@ import "../styles/index.css";
 
 import Layout from '../components/Layout.astro';
 import SiteHeaderMobile from '../components/SiteHeaderMobile.js';
+import Revealable from '../components/Revealable.js';
 import Footer from '../components/Footer.js';
 ---
 
 <Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
   <SiteHeaderMobile/>
-  <section class="relative">
-    <img
-      src="/images/dim-sum.avif"
-      class="relative block object-cover bg-cover h-[70vh] w-full"
-      alt="a variety of dim sum on a table"
-    />
-    <h1 class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-6xl text-center text-white font-black drop-shadow-2xl md:text-8xl">VISIT US</h1>
-  </section>
 
-  <section class="px-4 py-20 md:max-w-xl md:mx-auto ">
-    <h1 class="font-syncopate font-extrabold text-center text-3xl mb-4 md:text-5xl">
-      HOURS & LOCATION
-    </h1>
-    <p class="text-center mb-4 leading-6">
-      <a href="https://maps.google.com/?q=950+Broadway,+Denver,+CO+80203,+USA&ftid=0x876c7f29c79cc459:0x331c561681c06022" target="_blank">
-        950 Broadway,
+  <Revealable client:visible>
+    <section class="relative">
+      <img
+        src="/images/dim-sum.avif"
+        class="relative block object-cover bg-cover h-[70vh] w-full"
+        alt="a variety of dim sum on a table"
+      />
+      <h1 class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-6xl text-center text-white font-black drop-shadow-2xl md:text-8xl">VISIT US</h1>
+    </section>
+  </Revealable>
+
+  <Revealable client:visible>
+    <section class="px-4 py-20 md:max-w-xl md:mx-auto ">
+      <h1 class="font-syncopate font-extrabold text-center text-3xl mb-4 md:text-5xl">
+        HOURS & LOCATION
+      </h1>
+      <p class="text-center mb-4 leading-6">
+        <a href="https://maps.google.com/?q=950+Broadway,+Denver,+CO+80203,+USA&ftid=0x876c7f29c79cc459:0x331c561681c06022" target="_blank">
+          950 Broadway,
+          <br>
+          Denver, CO 80203
+        </a>
         <br>
-        Denver, CO 80203
-      </a>
-      <br>
-      <a href="tel:(303) 335-0368">(303) 335-0368</a>
-      <br>
-      <a href="mailto:eatplayground@gmail.com">eatplayground@gmail.com</a>
-    </p>
-    <p class="text-center mb-4 leading-6">Monday - Closed</p>
-    <p class="text-center mb-4 leading-6">
-      Tuesday - Sunday
-      <br>
-      11:00 am - 9:00 pm
-    </p>
-  </section>
+        <a href="tel:(303) 335-0368">(303) 335-0368</a>
+        <br>
+        <a href="mailto:eatplayground@gmail.com">eatplayground@gmail.com</a>
+      </p>
+      <p class="text-center mb-4 leading-6">Monday - Closed</p>
+      <p class="text-center mb-4 leading-6">
+        Tuesday - Sunday
+        <br>
+        11:00 am - 9:00 pm
+      </p>
+    </section>
+  </Revealable>
 
   <section class="map-responsive">
     <iframe
@@ -56,3 +62,19 @@ import Footer from '../components/Footer.js';
     <Footer/>
   </section>
 </Layout>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+      } else {
+        entry.target.classList.remove('reveal');
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.revealable');
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>

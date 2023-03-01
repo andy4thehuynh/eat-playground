@@ -1,0 +1,38 @@
+---
+import "../../styles/index.css";
+
+import Layout from '../../components/Layout.astro';
+import Revealable from '../../components/revealable.js';
+import SiteHeaderMobile from '../../components/SiteHeaderMobile.js';
+import Footer from '../../components/Footer.js';
+---
+
+<Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
+  <SiteHeaderMobile/>
+
+  <Revealable client:visible>
+    <h1>WE FUCKING DID IT</h1>
+  </Revealable>
+  <section class="hidden revealable">
+    <img
+      src="../images/chicken-wings.jpg"
+      class="block object-cover bg-cover h-[70vh] w-full"
+      alt="baked chicken wings on a sheet pan"
+    />
+  </section>
+
+  <main>
+    <section class="py-8 px-4 text-center w-96 mx-auto">
+      <h1 class="font-syncopate text-4xl font-black bg-red-600">BOK BOK</h1>
+      <img
+        src="../images/bok-bok-logo.png"
+        class="block"
+        alt="bok bok logo"/>
+    </section>
+  </main>
+
+
+  <section>
+    <Footer/>
+  </section>
+</Layout>

@@ -3,42 +3,64 @@ import "../styles/index.css";
 
 import Layout from '../components/Layout.astro';
 import SiteHeaderMobile from '../components/SiteHeaderMobile.js';
+import Revealable from '../components/Revealable.js';
 import FoodMenu from '../components/FoodMenu.js';
 import Footer from '../components/Footer.js';
 ---
 
 <Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
   <SiteHeaderMobile/>
-  <section class="relative">
-    <img
-      src="/images/two-eggrolls.avif"
-      class="relative block object-cover bg-cover h-[70vh] w-full"
-      alt="fresh fried eggrolls in steam baskets"
-    />
-    <h1 class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-6xl text-center text-white font-black drop-shadow-2xl md:text-8xl">ABOUT US</h1>
-  </section>
 
-  <section class="px-4 py-20 md:max-w-xl md:mx-auto">
-    <p class="mb-4 font-normal leading-6 text-center">
-      PLAYGROUND Food Hall is all about exploring ideas with unlimited options. We understand that it’s hard to decide what to eat, especially when we’re sharing moments with our friends and family.
-    </p>
+  <Revealable client:visible>
+    <section class="relative">
+      <img
+        src="/images/two-eggrolls.avif"
+        class="relative block object-cover bg-cover h-[70vh] w-full"
+        alt="fresh fried eggrolls in steam baskets"
+      />
+      <h1 class="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-6xl text-center text-white font-black drop-shadow-2xl md:text-8xl">ABOUT US</h1>
+    </section>
 
-    <p class="mb-4 font-normal leading-6 text-center">
-      Our food hall encourages togetherness, light-hearted yet seriously delicious options inspired by Asian cultures. Korean/Mexican concepts to traditional comforts of Chinese takeout favorites, this place has it all.
-    </p>
+    <section class="px-4 py-20 md:max-w-xl md:mx-auto">
+      <p class="mb-4 font-normal leading-6 text-center">
+        PLAYGROUND Food Hall is all about exploring ideas with unlimited options. We understand that it’s hard to decide what to eat, especially when we’re sharing moments with our friends and family.
+      </p>
 
-    <p class="mb-4 font-normal leading-6 text-center">
-      The best part is the ordering process is seamless. Everyone chooses what they want from different restaurants under our food hall options and check out. No hassle of multiple delivery fees from various brick and mortar locations and extra-long wait times for different meals to arrive. Playground is focused on quality food made with heart in one kitchen.
-    </p>
+      <p class="mb-4 font-normal leading-6 text-center">
+        Our food hall encourages togetherness, light-hearted yet seriously delicious options inspired by Asian cultures. Korean/Mexican concepts to traditional comforts of Chinese takeout favorites, this place has it all.
+      </p>
 
-    <p class="font-normal leading-6 text-center">
-      We are a collection of 6 restaurant concepts operating out of one state-of-the-art, smart kitchen. Our brands offer culinary-designed menus carefully crafted with quality you can taste. From our kitchen to yours, we hope you taste the love delivered to your door. PLAYGROUND has partnered with CloudKitchen and is located at 810 Vallejo Street, Denver, CO. We are designed for delivery and takeout.
-    </p>
-  </section>
+      <p class="mb-4 font-normal leading-6 text-center">
+        The best part is the ordering process is seamless. Everyone chooses what they want from different restaurants under our food hall options and check out. No hassle of multiple delivery fees from various brick and mortar locations and extra-long wait times for different meals to arrive. Playground is focused on quality food made with heart in one kitchen.
+      </p>
 
-  <FoodMenu/>
+      <p class="font-normal leading-6 text-center">
+        We are a collection of 6 restaurant concepts operating out of one state-of-the-art, smart kitchen. Our brands offer culinary-designed menus carefully crafted with quality you can taste. From our kitchen to yours, we hope you taste the love delivered to your door. PLAYGROUND has partnered with CloudKitchen and is located at 810 Vallejo Street, Denver, CO. We are designed for delivery and takeout.
+      </p>
+    </section>
+  </Revealable>
+
+  <Revealable client:visible>
+    <FoodMenu/>
+  </Revealable>
 
   <section>
     <Footer/>
   </section>
 </Layout>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+      } else {
+        entry.target.classList.remove('reveal');
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.revealable');
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>
