@@ -10,10 +10,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.revealable {
-  transition: 1s ease all;
-}
-
 .map-responsive {
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -35,8 +31,16 @@ body {
   transform: translateX(-100%);
   transition: all 1s;
 }
+
 .reveal {
   opacity: 1;
   filter: blur(0);
   transform: translateX(-0);
+}
+
+/* Detect whether the user prefers to display any animations */
+@media(prefers-reduced-motion) {
+  .revealable {
+    transition: none;
+  }
 }
