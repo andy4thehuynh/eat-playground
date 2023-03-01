@@ -11,6 +11,9 @@ import Footer from '../components/Footer.js';
 ---
 
 <Layout title="Playground Asian Food Hall | Asian fusion food hall in Denver, CO">
+  <section class="hidden md:block">
+    <LocationBanner/>
+  </section>
   <section class="top-nav">
     <div class="object-cover my-3">
       <a href="/">
@@ -32,7 +35,10 @@ import Footer from '../components/Footer.js';
       <li class="md:link-underline-animation "><a href="contact.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">CONTACT</a></li>
     </ul>
   </section>
-  <LocationBanner/>
+
+  <div class="md:hidden">
+    <LocationBanner/>
+  </div>
 
   <Carousel/>
 

@@ -1,4 +1,4 @@
-const LocationBanner = () => {
+const LocationBanner = (props) => {
   return (
     <div className="bg-red-500 flex justify-center">
       <div className="block mx-4 my-1 w-full md:w-auto md:h-7">
