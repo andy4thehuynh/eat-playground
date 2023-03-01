@@ -3,13 +3,14 @@ import "../styles/index.css";
 
 import Layout from '../components/Layout.astro';
 import SiteHeaderMobile from '../components/SiteHeaderMobile.js';
+import Revealable from '../components/Revealable.js';
 import Footer from '../components/Footer.js';
 ---
 
 <Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
   <SiteHeaderMobile/>
 
-  <section>
+  <Revealable client:visible>
     <div class="py-20 lg:py-16 px-4 mx-auto max-w-xl">
       <h2 class="mb-6 text-4xl tracking-tight font-syncopate font-black text-center md:text-5xl">Contact Us</h2>
       <p class="mb-6 font-thin text-center text-md">Send us a message and we’ll get back to you as soon as possible.</p>
@@ -36,10 +37,26 @@ import Footer from '../components/Footer.js';
         <button type="submit" class="py-3 px-5 text-sm font-black font-syncopate text-center border-4 border-black w-full md:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">SEND</button>
       </form>
     </div>
-  </section>
+  </Revealable>
 
 
   <section>
     <Footer/>
   </section>
 </Layout>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+      } else {
+        entry.target.classList.remove('reveal');
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.revealable');
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>
