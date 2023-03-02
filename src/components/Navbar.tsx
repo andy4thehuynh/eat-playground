@@ -2,10 +2,10 @@ import NavbarLink from '../components/NavbarLink.js';
 
 const Navbar = () => {
   const links = {
-    "HOURS & LOCATION": "hours_and_location.html",
-    "MENU": "#menu",
-    "ABOUT": "about.html",
-    "CONTACT": "contact.html",
+    "HOURS & LOCATION": "/hours_and_location/",
+    "MENU": "/menu/bok-bok",
+    "ABOUT": "/about/",
+    "CONTACT": "/contact/",
   };
 
   return(
