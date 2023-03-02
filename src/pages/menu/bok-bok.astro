@@ -2,7 +2,6 @@
 import "../../styles/index.css";
 
 import Layout from '../../components/Layout.astro';
-import Revealable from '../../components/revealable.js';
 import SiteHeaderMobile from '../../components/SiteHeaderMobile.js';
 import Footer from '../../components/Footer.js';
 ---
@@ -10,9 +9,6 @@ import Footer from '../../components/Footer.js';
 <Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
   <SiteHeaderMobile/>
 
-  <Revealable client:visible>
-    <h1>WE FUCKING DID IT</h1>
-  </Revealable>
   <section class="hidden revealable">
     <img
       src="../images/chicken-wings.jpg"

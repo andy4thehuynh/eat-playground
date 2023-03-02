@@ -1,8 +1,8 @@
-import "../styles/navbarlink.css"
+import "../styles/navbarlink.css";
 
 const Revealable = (props) => {
   return (
-    <section class="revealable">
+    <section className="revealable">
       {props.children}
     </section>
   )
