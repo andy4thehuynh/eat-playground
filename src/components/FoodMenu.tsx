@@ -11,7 +11,7 @@ const FoodMenu = () => {
             alt="pink tiger tacos logo"/>
         </a>
         <a
-          href="menu/kimbap/"
+          href="menu/hello-kimbap/"
           className="w-20 m-2 md:w-40">
           <img
             src="/images/kimbap-logo.avif"
