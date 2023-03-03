@@ -1,5 +1,3 @@
-import "../styles/navbarlink.css";
-
 const Revealable = (props) => {
   return (
     <section className="revealable">
