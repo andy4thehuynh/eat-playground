@@ -1,0 +1,182 @@
+---
+import "../../styles/index.css";
+import "../../styles/navbarlink.css";
+import LocationBanner from '../../components/LocationBanner.js';
+
+import Layout from '../../components/Layout.astro';
+import Revealable from '../../components/Revealable.js';
+import Footer from '../../components/Footer.js';
+---
+
+<Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
+  <section class="hidden md:block">
+    <LocationBanner/>
+  </section>
+  <section class="top-nav">
+    <div class="object-cover my-3">
+      <a href="/">
+        <img
+          src="/images/playground-header-logo.avif"
+          class="block h-[38px]"
+          alt="a sandwich sitting on top of a wooden table"
+        />
+      </a>
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+    <ul class="menu z-50">
+      <li class="md:link-underline-animation "><a href="hours_and_location.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">HOURS & LOCATION</a></li>
+      <li class="md:link-underline-animation "><a href="#" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">MENU</a></li>
+      <li class="md:link-underline-animation "><a href="about.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">ABOUT</a></li>
+      <li class="md:link-underline-animation "><a href="contact.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">CONTACT</a></li>
+    </ul>
+  </section>
+  <div class="md:hidden">
+    <LocationBanner/>
+  </div>
+
+
+  <Revealable client:visible>
+      <img
+        src="../images/eggrolls.avif"
+        class="block object-cover bg-cover h-[70vh] w-full"
+        alt="a stack of eggrolls"
+      />
+  </Revealable>
+
+
+  <Revealable client:visible>
+    <main>
+      <section class="text-center max-w-2xl px-4 mx-auto pt-20 pb-20">
+        <h1 class="font-syncopate text-3xl font-black bg-red-600 mt-[-35%] py-6 mb-11 md:mt-[-20%]">Gem Pan Asian</h1>
+        <img
+          src="../images/gem-pan-asian-logo.png"
+          class="block w-48 mx-auto md:w-56"
+          alt="bok bok logo"/>
+      </section>
+    </main>
+  </Revealable>
+
+  <Revealable client:visible>
+    <div class="container mx-auto flex flex-row flex-wrap md:flex-nowrap w-full">
+      <div class="flex flex-col basis-full flex-1 mb-5 md:border-r-4 md:border-black">
+        <h2 class="text-2xl font-syncopate font-black text-center mb-4 md:text-3xl">Chef Signatures</h2>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Garlic Noodles</h4>
+          <p class="text-center">House special. Garlic-infused oil, egg noodles tossed in garlic, shallots, and herbs, topped with fried garlic bits</p>
+          <p class="text-center"><strong>11</strong></p>
+          <p class="text-center text-sm"><em>Tofu 3</em></p>
+          <p class="text-center text-sm"><em>Chicken 4</em></p>
+          <p class="text-center text-sm"><em>Korean Steak 5</em></p>
+          <p class="text-center text-sm"><em>Chinese Sausage 3</em></p>
+          <p class="text-center text-sm"><em>Shrimp 6</em></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Garlic Noodles with Chicken</h4>
+          <p class="text-center">House special. Garlic-infused oil, egg noodles tossed in garlic, shallots and herbs, topped with fried garlic bits.</p>
+          <p class="text-center"><strong>14</strong></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Garlic Noodles with Tofu</h4>
+          <p class="text-center">Lightly fried tofu and soy-glazed, garlic-infused oil, egg noodles tossed in garlic, shallots and herbs, topped with fried garlic bits.</p>
+          <p class="text-center"><strong>14</strong></p>
+        </div>
+        <h2 class="text-2xl font-syncopate font-black text-center mb-4 md:text-3xl">SIDES</h2>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Veggie Egg Rolls (4)</h4>
+          <p class="text-center">Side of sweet chili sauce</p>
+          <p class="text-center"><strong>5</strong></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Omnipork* egg rolls</h4>
+          <p class="text-center">Vegan Pork Egg Rolls, freshly made in-house. Whether you're vegan or looking to try something new, this is a winner.</p>
+          <p class="text-center"><strong>7</strong></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Five-Spice Fried Tofu</h4>
+          <p class="text-center">Organic tofu, lightly fried, tossed in five-spice seasoning, served with sweet chili sauce.</p>
+          <p class="text-center"><strong>10</strong></p>
+        </div>
+        <h2 class="text-2xl font-syncopate font-black text-center mb-4 md:text-3xl">DRINKS</h2>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">La Croix</h4>
+          <p class="text-center"><strong>3</strong></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Coconut Water</h4>
+          <p class="text-center"><strong>5</strong></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">SODA</h4>
+          <p class="text-center"><strong>3</strong></p>
+        </div>
+      </div>
+
+      <div class="flex flex-col basis-full flex-1 mb-5 md:border-r-4 md:border-black">
+        <h2 class="text-2xl font-syncopate font-black text-center mb-4 md:text-3xl">SIGNATURE BOWLS</h2>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">SAIGON BOWLS</h4>
+          <p class="text-center">Grilled ginger garlic chicken, fried rice, lettuce, tomatoes, cucumbers, fried shallots, cilantro, and drizzled with Vietnamese scallion oil</p>
+          <p class="text-center"><strong>12</strong></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Give Me Seoul</h4>
+          <p class="text-center">Korean marinated steak, kimchi rice, Vietnamese chimichurri sauce, and sesame seeds, cucumbers, pickled carrots. Add an egg!</p>
+          <p class="text-center"><strong>14</strong></p>
+          <p class="text-center text-sm"><em>add egg</em></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Garlic Noodles with Tofu</h4>
+          <p class="text-center">Lightly fried tofu and soy-glazed, garlic-infused oil, egg noodles tossed in garlic, shallots, and herbs, topped with fried garlic bits.</p>
+          <p class="text-center"><strong>14</strong></p>
+        </div>
+
+        <h2 class="text-2xl font-syncopate font-black text-center mb-4 md:text-3xl">BREAKFAST</h2>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Breakfast Banh Mi, Egg, Bacon, Chinese Sausage</h4>
+          <p class="text-center">Toasted baguette, eggs any style, bacon, Chinese sausage, spicy aioli and soy sauce drizzle, scallions, fried shallots.</p>
+          <p class="text-center"><strong>9</strong></p>
+          <p class="text-center text-sm"><em>Fried Egg 1</em></p>
+          <p class="text-center text-sm"><em>Avocado 1</em></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Huevo Dilla</h4>
+          <p class="text-center">Flour tortilla dunked in egg batter, grilled, filled with potatoes, bacon, Chinese sausage, and cheese. Drizzled with spicy aioli and scallions.</p>
+          <p class="text-center"><strong>12</strong></p>
+          <p class="text-center text-sm"><em>Fried Egg 1</em></p>
+          <p class="text-center text-sm"><em>Avocado 1</em></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">An Com Rice Bowl</h4>
+          <p class="text-center">Rice, bacon or Chinese sausage, fried shallots, 2 organic eggs (any style), scallions, drizzle soy sauce and spicy aioli.</p>
+          <p class="text-center"><strong>10</strong></p>
+          <p class="text-center text-sm"><em>Fried Egg 1</em></p>
+          <p class="text-center text-sm"><em>Avocado 1</em></p>
+        </div>
+      </div>
+    </div>
+  </Revealable>
+
+
+  <section>
+    <Footer/>
+  </section>
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+      } else {
+        entry.target.classList.remove('reveal');
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.revealable');
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>
