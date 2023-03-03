@@ -1,0 +1,123 @@
+---
+import "../../styles/index.css";
+import "../../styles/navbarlink.css";
+import LocationBanner from '../../components/LocationBanner.js';
+
+import Layout from '../../components/Layout.astro';
+import Revealable from '../../components/Revealable.js';
+import Footer from '../../components/Footer.js';
+---
+
+<Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
+  <section class="hidden md:block">
+    <LocationBanner/>
+  </section>
+  <section class="top-nav">
+    <div class="object-cover my-3">
+      <a href="/">
+        <img
+          src="/images/playground-header-logo.avif"
+          class="block h-[38px]"
+          alt="a sandwich sitting on top of a wooden table"
+        />
+      </a>
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+    <ul class="menu z-50">
+      <li class="md:link-underline-animation "><a href="hours_and_location.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">HOURS & LOCATION</a></li>
+      <li class="md:link-underline-animation "><a href="#" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">MENU</a></li>
+      <li class="md:link-underline-animation "><a href="about.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">ABOUT</a></li>
+      <li class="md:link-underline-animation "><a href="contact.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">CONTACT</a></li>
+    </ul>
+  </section>
+  <div class="md:hidden">
+    <LocationBanner/>
+  </div>
+
+
+  <Revealable client:visible>
+      <img
+        src="../images/banh-mi.jpg"
+        class="block object-cover bg-cover h-[70vh] w-full"
+        alt="banh mi"
+      />
+  </Revealable>
+
+
+  <Revealable client:visible>
+    <main>
+      <section class="text-center max-w-2xl px-4 mx-auto pt-20 pb-20">
+        <h1 class="font-syncopate text-3xl font-black bg-red-600 mt-[-35%] py-6 mb-11 md:mt-[-20%]">BONFIRE</h1>
+        <img
+          src="../images/bonfire-logo.png"
+          class="block w-48 mx-auto md:w-56"
+          alt="bok bok logo"/>
+      </section>
+    </main>
+  </Revealable>
+
+  <Revealable client:visible>
+    <div class="container mx-auto flex flex-row flex-wrap md:flex-nowrap w-full">
+      <div class="flex flex-col basis-full flex-1 mb-5">
+        <h2 class="text-2xl font-syncopate font-black text-center mb-4 md:text-3xl">MAINS</h2>
+        <div class="food-menu-item mb-4">
+          <p class="text-center mb-2 text-sm">Vietnamese sandwiches with fillings, toasted</p>
+          <p class="text-center mb-6 text-sm">Served with jalapeno, pickled carrots, cucumbers, cilantro, soy sauce, and garlic aioli </p>
+        </div>
+        <div class="food-menu-item mb-4">
+          <h4 class="font-syncopate font-black text-lg text-center">GRILLED CHICKEN</h4>
+          <p class="text-center"><strong>10</strong></p>
+        </div>
+        <div class="food-menu-item mb-4">
+          <h4 class="font-syncopate font-black text-lg text-center">GRILLED BEEF</h4>
+          <p class="text-center"><strong>11</strong></p>
+        </div>
+        <div class="food-menu-item mb-4">
+          <h4 class="font-syncopate font-black text-lg text-center">Po’ Shrimp</h4>
+          <p class="text-center"><strong>12</strong></p>
+        </div>
+        <div class="food-menu-item mb-4">
+          <h4 class="font-syncopate font-black text-lg text-center">Crispy Tofu</h4>
+          <p class="text-center"><strong>10</strong></p>
+        </div>
+        <div class="food-menu-item mb-4">
+          <h4 class="font-syncopate font-black text-lg text-center">Chunky Avocado</h4>
+          <p class="text-center"><strong>11</strong></p>
+        </div>
+        <div class="food-menu-item mb-4">
+          <h4 class="font-syncopate font-black text-lg text-center">Fried Eggs + Chinese Sausage</h4>
+          <p class="text-center"><strong>9</strong></p>
+        </div>
+        <div class="food-menu-item mb-4">
+          <p class="text-center text-sm">Add Egg | Avocado + <strong>$1</strong></p>
+          <p class="text-center text-sm">Double Meat + <strong>$4</strong></p>
+          <p class="text-center text-sm">Extra Sriracha Aioli <strong>$0.25</strong></p>
+        </div>
+      </div>
+    </div>
+  </Revealable>
+
+
+  <section>
+    <Footer/>
+  </section>
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+      } else {
+        entry.target.classList.remove('reveal');
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.revealable');
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>
