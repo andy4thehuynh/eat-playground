@@ -1,0 +1,138 @@
+---
+import "../../styles/index.css";
+import "../../styles/navbarlink.css";
+import LocationBanner from '../../components/LocationBanner.js';
+
+import Layout from '../../components/Layout.astro';
+import Revealable from '../../components/Revealable.js';
+import Footer from '../../components/Footer.js';
+---
+
+<Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
+  <section class="hidden md:block">
+    <LocationBanner/>
+  </section>
+  <section class="top-nav">
+    <div class="object-cover my-3">
+      <a href="/">
+        <img
+          src="/images/playground-header-logo.avif"
+          class="block h-[38px]"
+          alt="a sandwich sitting on top of a wooden table"
+        />
+      </a>
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+    <ul class="menu z-50">
+      <li class="md:link-underline-animation "><a href="hours_and_location.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">HOURS & LOCATION</a></li>
+      <li class="md:link-underline-animation "><a href="#" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">MENU</a></li>
+      <li class="md:link-underline-animation "><a href="about.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">ABOUT</a></li>
+      <li class="md:link-underline-animation "><a href="contact.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">CONTACT</a></li>
+    </ul>
+  </section>
+  <div class="md:hidden">
+    <LocationBanner/>
+  </div>
+
+
+  <Revealable client:visible>
+      <img
+        src="../images/three-tacos.avif"
+        class="block object-cover bg-cover h-[70vh] w-full"
+        alt="three street tacos"
+      />
+  </Revealable>
+
+
+  <Revealable client:visible>
+    <main>
+      <section class="text-center max-w-2xl px-4 mx-auto pt-20 pb-20">
+        <h1 class="font-syncopate text-3xl font-black bg-red-600 mt-[-35%] py-6 mb-11 md:mt-[-20%]">PINK TIGER TACOS</h1>
+        <img
+          src="../images/pink-tiger-tacos-logo.png"
+          class="block w-48 mx-auto md:w-56"
+          alt="bok bok logo"/>
+      </section>
+    </main>
+  </Revealable>
+
+  <Revealable client:visible>
+    <div class="container mx-auto flex flex-row flex-wrap md:flex-nowrap w-full">
+      <div class="flex flex-col basis-full flex-1 mb-5 md:border-r-4 md:border-black">
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">BURRITOS</h4>
+          <p class="text-center">Kimchi fried rice, lettuce, cheese, carrots, green onions, sour cream, gochujang aioli</p>
+          <p class="text-center"><strong>10</strong></p>
+          <p class="text-center text-sm"><em>Steak + $2</em></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">TACOS</h4>
+          <p class="text-center">(3) Sesame vinaigrette salad mix, green onion, crushed sesame seeds, gochujang aioli, and a wedge of lime</p>
+          <p class="text-center"><strong>10</strong></p>
+          <p class="text-center text-sm"><em>Steak + $2</em></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Gogi Bowl</h4>
+          <p class="text-center">Rice, sesame vinaigrette salad mix, fried egg*, green onion, cilantro, carrots, sesame oil, and gochujang aioli, sprinkles of cojita cheese</p>
+          <p class="text-center"><strong>10</strong></p>
+          <p class="text-center text-sm"><em>Steak + $2</em></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">QUESADILLAS</h4>
+          <p class="text-center">Jack and cheddar cheese, lettuce, and a mix of sauces. Sprinkles of cojita cheese</p>
+          <p class="text-center"><strong>10</strong></p>
+          <p class="text-center text-sm"><em>Steak + $2</em></p>
+        </div>
+      </div>
+
+      <div class="flex flex-col basis-full flex-1 mb-5">
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">NACHOS</h4>
+          <p class="text-center">Corn tortilla chips, queso blanco, green onion, roasted sesame seeds, kimchi, cojita and sour cream</p>
+          <p class="text-center"><strong>10</strong></p>
+          <p class="text-center text-sm"><em>Steak + $2</em></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <h4 class="font-syncopate font-black text-lg text-center">Gogi Fries</h4>
+          <p class="text-center">Sweet potato waffle fries, queso blanco, kimchi, green onion, roasted sesame seeds, cojita and sauces</p>
+          <p class="text-center"><strong>10</strong></p>
+          <p class="text-center text-sm"><em>Bulgogi Steak</em></p>
+          <p class="text-center text-sm"><em>Chicken</em></p>
+          <p class="text-center text-sm"><em>Spicy Fried Tofu</em></p>
+          <p class="text-center text-sm"><em>Steak + $2</em></p>
+        </div>
+        <div class="food-menu-item mb-6 mx-auto px-2 md:w-3/6">
+          <p class="text-center text-sm">Add Egg | Avocado + <strong>$1</strong></p>
+          <p class="text-center text-sm">Double Meat + <strong>$4</strong></p>
+          <p class="text-center text-sm">Extra Gochujang Aioli <strong>$0.25</strong></p>
+          <p class="text-center text-sm">Extra Taco <strong>$3</strong></p>
+          <p class="text-center text-sm">Steak + <strong>$1</strong></p>
+        </div>
+      </div>
+    </div>
+  </Revealable>
+
+
+  <section>
+    <Footer/>
+  </section>
+</Layout>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry)
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+      } else {
+        entry.target.classList.remove('reveal');
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.revealable');
+  hiddenElements.forEach((el) => observer.observe(el));
+</script>
