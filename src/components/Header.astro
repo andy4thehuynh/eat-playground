@@ -1,0 +1,65 @@
+---
+import "../styles/navbarlink.css";
+import LocationBanner from "./LocationBanner.astro";
+
+const linkStyles = [
+  "link-underline-animation",
+  "block",
+  "text-black",
+  "font-extrabold",
+  "leading-loose",
+  "tracking-widest",
+  "text-sm",
+];
+---
+
+<section class="hidden md:block">
+  <LocationBanner/>
+</section>
+
+<section class="top-nav sticky top-0 z-20 bg-white">
+  <div class="object-cover my-3">
+    <a href="/">
+      <img
+        src="/images/playground-header-logo.avif"
+        class="block h-[38px]"
+        alt="a sandwich sitting on top of a wooden table"
+      />
+    </a>
+  </div>
+
+  <input id="menu-toggle" type="checkbox" />
+  <label class="menu-button-container" for="menu-toggle">
+    <div class="menu-button"></div>
+  </label>
+
+  <ul class="menu z-50">
+    <li class="md:link-underline-animation">
+      <a href="hours_and_location.html" class:list={linkStyles}>
+        HOURS & LOCATION
+      </a>
+    </li>
+
+    <li class="md:link-underline-animation">
+      <a href="#" class:list={linkStyles}>
+        MENU
+      </a>
+    </li>
+
+    <li class="md:link-underline-animation">
+      <a href="about.html" class:list={linkStyles}>
+        ABOUT
+      </a>
+    </li>
+
+    <li class="md:link-underline-animation">
+      <a href="contact.html" class:list={linkStyles}>
+        CONTACT
+      </a>
+    </li>
+  </ul>
+</section>
+
+<section class="md:hidden">
+  <LocationBanner/>
+</section>

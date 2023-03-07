@@ -1,46 +1,18 @@
 ---
-import "../styles/navbarlink.css";
 import "../styles/index.css";
 
 import Revealable from '../components/Revealable.astro';
+
 import Layout from '../components/Layout.astro';
-import LocationBanner from '../components/LocationBanner.js';
+import Header from '../components/Header.astro';
 import Carousel from '../components/Carousel.js';
 import FoodMenu from '../components/FoodMenu.js';
 import Footer from '../components/Footer.js';
 ---
 
 <Layout title="Playground Asian Food Hall | Asian fusion food hall in Denver, CO">
-  <section class="hidden md:block">
-    <LocationBanner/>
-  </section>
-  <section class="top-nav sticky top-0 z-20 bg-white">
-    <div class="object-cover my-3">
-      <a href="/">
-        <img
-          src="/images/playground-header-logo.avif"
-          class="block h-[38px]"
-          alt="a sandwich sitting on top of a wooden table"
-        />
-      </a>
-    </div>
-    <input id="menu-toggle" type="checkbox" />
-    <label class='menu-button-container' for="menu-toggle">
-      <div class='menu-button'></div>
-    </label>
-    <ul class="menu z-50">
-      <li class="md:link-underline-animation "><a href="hours_and_location.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">HOURS & LOCATION</a></li>
-      <li class="md:link-underline-animation "><a href="#" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">MENU</a></li>
-      <li class="md:link-underline-animation "><a href="about.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">ABOUT</a></li>
-      <li class="md:link-underline-animation "><a href="contact.html" class="link-underline-animation block text-black font-extrabold leading-loose tracking-widest text-sm">CONTACT</a></li>
-    </ul>
-  </section>
-  <div class="md:hidden">
-    <LocationBanner/>
-  </div>
-
+  <Header/>
   <Carousel/>
-
   <Revealable>
     <FoodMenu/>
   </Revealable>
