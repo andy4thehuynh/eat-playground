@@ -4,14 +4,14 @@ import "../styles/index.css";
 import Layout from '../components/Layout.astro';
 import Header from '../components/Header.astro';
 import Revealable from '../components/Revealable.astro';
-import FoodMenu from '../components/FoodMenu.js';
+import FoodMenu from '../components/FoodMenu.astro';
 import Footer from '../components/Footer.js';
 ---
 
 <Layout title="Hours + Location | Playground Asian Food Hall  | Asian fusion food hall in Denver, CO">
   <Header/>
 
-  <Revealable client:visible>
+  <Revealable>
     <section class="relative">
       <img
         src="/images/two-eggrolls.avif"
@@ -40,7 +40,7 @@ import Footer from '../components/Footer.js';
     </section>
   </Revealable>
 
-  <Revealable client:visible>
+  <Revealable>
     <FoodMenu/>
   </Revealable>
 
