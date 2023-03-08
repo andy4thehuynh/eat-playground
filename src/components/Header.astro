@@ -1,6 +1,6 @@
 ---
 import "../styles/navbarlink.css";
-import LocationBanner from "./LocationBanner.astro";
+import ContactBanner from "./ContactBanner.astro";
 
 const linkStyles = [
   "link-underline-animation",
@@ -13,8 +13,9 @@ const linkStyles = [
 ];
 ---
 
+<!-- LocationBanner -->
 <section class="hidden md:block">
-  <LocationBanner/>
+  <ContactBanner/>
 </section>
 
 <section class="top-nav sticky top-0 z-20 bg-white">
@@ -61,5 +62,5 @@ const linkStyles = [
 </section>
 
 <section class="md:hidden">
-  <LocationBanner/>
+  <ContactBanner/>
 </section>
