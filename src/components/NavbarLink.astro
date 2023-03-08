@@ -1,0 +1,26 @@
+---
+interface Props {
+  text: string;
+  pathname: string;
+}
+const { text, pathname } = Astro.props;
+
+const linkStyles = [
+  "link-underline-animation",
+  "block",
+  "text-black",
+  "font-extrabold",
+  "leading-loose",
+  "tracking-widest",
+  "text-sm",
+];
+
+const currentPath = Astro.url.pathname;
+
+---
+
+<li class="md:link-underline-animation">
+  <a href={pathname} class:list={[linkStyles, {currentLink: currentPath == pathname }]}>
+    {text}
+  </a>
+</li>

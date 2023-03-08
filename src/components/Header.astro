@@ -1,19 +1,18 @@
 ---
 import "../styles/navbarlink.css";
 import ContactBanner from "./ContactBanner.astro";
+import NavbarLink from './NavbarLink.astro';
 
-const linkStyles = [
-  "link-underline-animation",
-  "block",
-  "text-black",
-  "font-extrabold",
-  "leading-loose",
-  "tracking-widest",
-  "text-sm",
-];
+const links = {
+  "HOURS & LOCATION": "/hours_and_location/",
+  "MENU": "/menu/bok-bok",
+  "ABOUT": "/about/",
+  "CONTACT": "/contact/",
+};
 ---
 
-<!-- LocationBanner -->
+<!-- ContactBanner is below navbar on mobile -->
+<!-- ContactBanner is above navbar on desktop -->
 <section class="hidden md:block">
   <ContactBanner/>
 </section>
@@ -35,32 +34,12 @@ const linkStyles = [
   </label>
 
   <ul class="menu z-50">
-    <li class="md:link-underline-animation">
-      <a href="hours_and_location.html" class:list={linkStyles}>
-        HOURS & LOCATION
-      </a>
-    </li>
-
-    <li class="md:link-underline-animation">
-      <a href="#" class:list={linkStyles}>
-        MENU
-      </a>
-    </li>
-
-    <li class="md:link-underline-animation">
-      <a href="about.html" class:list={linkStyles}>
-        ABOUT
-      </a>
-    </li>
-
-    <li class="md:link-underline-animation">
-      <a href="contact.html" class:list={linkStyles}>
-        CONTACT
-      </a>
-    </li>
+    {Object.keys(links).map((key,_)=>{return(<NavbarLink text={key} pathname={links[key]}/>)})}
   </ul>
 </section>
 
+<!-- ContactBanner is below navbar on mobile -->
+<!-- ContactBanner is above navbar on desktop -->
 <section class="md:hidden">
   <ContactBanner/>
 </section>
