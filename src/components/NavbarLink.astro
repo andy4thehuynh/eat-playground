@@ -20,7 +20,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <li class="md:link-underline-animation">
-  <a href={pathname} class:list={[linkStyles, {currentLink: currentPath == pathname }]}>
+  <a href={pathname} class:list={[linkStyles, {currentLink: currentPath.includes(pathname) }]}>
     {text}
   </a>
 </li>
