@@ -76,22 +76,5 @@ import Footer from '../../components/Footer.astro';
     </div>
   </Revealable>
 
-
   <Footer/>
 </Layout>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry)
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
-      } else {
-        entry.target.classList.remove('reveal');
-      }
-    });
-  });
-
-  const hiddenElements = document.querySelectorAll('.revealable');
-  hiddenElements.forEach((el) => observer.observe(el));
-</script>
