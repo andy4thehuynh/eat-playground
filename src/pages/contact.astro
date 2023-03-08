@@ -18,20 +18,20 @@ import Footer from '../components/Footer.astro';
       <form name="contact" method="POST" class="space-y-4" data-netlify="true">
         <div>
           <label for="name" class="block mb-2 text-sm font-black">Name</label>
-          <input type="text" id="name" class="shadow-sm border-2 border-black text-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name" required>
+          <input type="text" name="name" id="name" class="shadow-sm border-2 border-black text-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name" required>
         </div>
         <div>
           <label for="email" class="block mb-2 text-sm font-black">Email</label>
-          <input type="email" id="email" class="shadow-sm border-2 border-black text-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="email" required>
+          <input type="email" name="email" id="email" class="shadow-sm border-2 border-black text-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="email" required>
         </div>
         <div>
           <label for="phone_number" class="block mb-2 text-sm font-black">Phone Number</label>
-          <input type="tel" id="phone_number" class="shadow-sm border-2 border-black text-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="555 555 5555" required>
+          <input type="tel" name="phone number" id="phone_number" class="shadow-sm border-2 border-black text-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="555 555 5555" required>
         </div>
 
         <div class="sm:col-span-2">
           <label for="message" class="block mb-2 text-sm font-medium">Your Message</label>
-          <textarea id="message" rows="6" class="block text-black p-2.5 w-full text-sm shadow-sm border-2 border-black focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="leave a comment..."></textarea>
+          <textarea id="message" name="message" rows="6" class="block text-black p-2.5 w-full text-sm shadow-sm border-2 border-black focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="leave a comment..."></textarea>
         </div>
 
         <button type="submit" class="py-3 px-5 text-sm font-black font-syncopate text-center border-4 border-black w-full md:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">SEND</button>
