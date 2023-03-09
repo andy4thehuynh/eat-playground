@@ -1,0 +1,19 @@
+---
+export interface Props {
+  id: string;
+  name: string;
+}
+
+const { id, name } = Astro.props as Props;
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+const val = yyyy + '-' + mm + '-' + dd;
+---
+
+<label for={id} class="block mb-2 text-sm font-black">Event Date</label>
+<input type="date" id={id} name={name} value={val} min="2020-01-01" max="2029-12-31"
+  class="shadow-sm border-2 border-black text-sm focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" required>
