@@ -1,88 +1,44 @@
+const EAT_PLAYGROUND_EMAIL = 'kim@eatplayground.com';
+const sgMail = require('@sendgrid/mail');
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
 exports.handler = async function (event, context) {
-  // 1. Set sendgrid api key in an env
-  // 2. Get email body to print properly from data object
-  // 3. Verify it is sent in SendGrid
-  const EAT_PLAYGROUND_EMAIL = "andy4thehuynh@gmail.com";
+  try {
+    body = JSON.parse(event['body'])
+    data = body.payload.human_fields
 
-  console.log("HITS event")
-  console.log(event);
+    const text = `
+      New form Submitted!
 
-  console.log("HITS BODy")
-  body = JSON.parse(event['body'])
-  data = body.payload.human_fields
-  console.log(data.Name)
+      Name: ${data.Name}
+      Email: ${data.Email}
+      Phone Number: ${data['Phone Number']}
+      Message: ${data.Message}
+    `;
 
-  const sendNotificationEmail = async ({ data }) => {
-    const sgMail = require('@sendgrid/mail')
-    sgMail.setApiKey(SENDGRID_API_KEY);
+    const msg = {
+      to: EAT_PLAYGROUND_EMAIL,
+      from: 'andy4thehuynh@gmail.com',
+      subject: 'New Contact Form Submission',
+      text: text,
+    };
 
-    var text = `
-      THIS IS THE NAME: 
-      ${data.Name}
-      THIS IS THE email: 
-      ${data.Email}
-    `.trim()
+    await sgMail.send(msg);
 
-    return text;
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        message: 'Successfully sent email',
+      })
+    }
 
+  } catch (error) {
+    console.error('Error sending email:', error);
 
-    // const msg = {
-    //   to: EAT_PLAYGROUND_EMAIL,
-    //   from: 'andy4thehuynh@gmail.com',
-    //   subject: 'New form submission for Eat Playground',
-    //   text: text,
-    // };
-
-    // sgMail
-    //   .send(msg)
-    //   .then(() => {
-    //     console.log('Email sent')
-    //   })
-    //   .catch((error) => {
-    //     console.error(error)
-    //   });
+    return {
+      statusCode: 500,
+      body: 'Error sending email'
+    };
   };
-  console.log("EMAIL MESSAGE")
-  console.log(sendNotificationEmail(data));
-  // const formData = require("form-data");
-  // const Mailgun = require("mailgun.js");
-
-  // const sendThankYouEmail = async ({ email }) => {
-  //   console.log('Sending the email');
-  //   const { MG_API_KEY: apiKey, MG_DOMAIN: domain } = process.env;
-  //   const mailgun = new Mailgun(formData).client({
-  //     username: 'api',
-  //     key: apiKey,
-  //   });
-
-  //   const mailData = {
-  //     from: `Stefan Judis stefan@${domain}`,
-  //     to: email,
-  //     subject: 'Thank you for your interest',
-  //     text: "I'll come back to you asap!",
-  //   };
-
-  //   await mailgun.messages.create(domain, mailData);
-  // };
-
-  // exports.handler = async (event, context) => {
-  //   try {
-  //     const data = JSON.parse(event.body);
-
-  //     await sendThankYouEmail(data);
-
-  //     return {
-  //       statusCode: 200,
-  //       body: JSON.stringify({
-  //         message: "Let's become serverless conductors!!!",
-  //       }),
-  //     };
-  //   } catch (error) {
-  //     console.log(error);
-  //     return {
-  //       statusCode: 500,
-  //       body: JSON.stringify({ error: 'Failed sending email' }),
-  //     };
-  //   }
-  // };
 };
