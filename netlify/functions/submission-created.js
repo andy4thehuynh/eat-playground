@@ -1,4 +1,4 @@
-const EAT_PLAYGROUND_EMAIL = 'kim@eatplayground.com';
+const EAT_PLAYGROUND_EMAIL = 'kimhuynh4@gmail.com';
 const sgMail = require('@sendgrid/mail');
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
